@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using SuppliesPriceLister.Common;
+using SuppliesPriceLister.Core.Loaders;
 using SuppliesPriceLister.Core.Models;
 using SuppliesPriceLister.Core.Processors;
 
@@ -10,10 +11,10 @@ namespace SuppliesPriceLister.Core
 {
     internal class PriceListProcessor : IPriceListProcessor
     {
-        private readonly IList<ISupplyListLoader> _loaders;
+        private readonly IList<ISupplyListParser> _loaders;
         private readonly ISupplyListProcessor _processor;
 
-        public PriceListProcessor(IList<ISupplyListLoader> loaders, ISupplyListProcessor processor)
+        public PriceListProcessor(IList<ISupplyListParser> loaders, ISupplyListProcessor processor)
         {
             _loaders = loaders;
             _processor = processor;
@@ -25,7 +26,7 @@ namespace SuppliesPriceLister.Core
                 .SelectMany(x => x)
                 .ToList();
 
-            await _processor.ProcessSuppyList(supplyList);
+            await _processor.ProcessSupplyList(supplyList);
         }
 
         private Task<IList<SupplyListItem>> LoadSupplyList(SupplyList supplyList)

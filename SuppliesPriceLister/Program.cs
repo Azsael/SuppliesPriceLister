@@ -34,13 +34,13 @@ namespace SuppliesPriceLister
             {
                 new SupplyList
                 {
-                    FilePath = $"{Directory.GetCurrentDirectory()}humphries.csv",
+                    FilePath = $"{Directory.GetCurrentDirectory()}\\humphries.csv",
                     Currency = "AUD",
                     Format = "csv"
                 },
                 new SupplyList
                 {
-                    FilePath = $"{Directory.GetCurrentDirectory()}megacorp.json",
+                    FilePath = $"{Directory.GetCurrentDirectory()}\\megacorp.json",
                     Currency = "USD",
                     Format = "json"
                 }

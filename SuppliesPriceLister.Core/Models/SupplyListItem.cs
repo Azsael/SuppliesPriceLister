@@ -10,6 +10,8 @@
 
         public decimal Price { get; set; }
 
+        public string Currency { get; set; }
+
         public string MaterialType { get; set; }
         public string ProviderId { get; set; }
 

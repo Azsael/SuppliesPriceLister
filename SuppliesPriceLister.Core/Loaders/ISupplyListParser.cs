@@ -2,9 +2,9 @@
 using System.Threading.Tasks;
 using SuppliesPriceLister.Core.Models;
 
-namespace SuppliesPriceLister.Core
+namespace SuppliesPriceLister.Core.Loaders
 {
-    public interface ISupplyListLoader
+    public interface ISupplyListParser
     {
         bool CanLoad(SupplyList list);
 

@@ -1,4 +1,4 @@
-﻿namespace SuppliesPriceLister.Core
+﻿namespace SuppliesPriceLister.Core.Models
 {
     public class SupplyList
     {
