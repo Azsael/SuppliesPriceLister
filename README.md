@@ -1,39 +1,37 @@
-## Requirements
-You've been provided with the shell of a .NET Core console application with two sample inputs.
+## Thoughts & Mentions
 
-Create an application which outputs both Humphries and Megacorp building supplies.
-The information printed should be the ID, item name and price.
-The supplies should be shown in a combined list.
-The supplies should be ordered from most expensive to least expensive.
-All prices must be shown to the nearest cent in AUD based on the exchange rate.
+Please find the solution I have produced within the confines the context and requirements given in the original readme.md (now spec.md).
 
-The code should be at a standard you'd feel comfortable with putting in production.
+I find these kind of tests particularly difficult when it comes to the point about "feel comfortable putting into production or 'production ready'", as I tend to find software development is very context specific.
 
-### Source Data
-Both humphries.csv and megacorp.json contain lists of construction supplies and labour items.
+There is a great number of solutions to any particular task, and I find without the greater context of who the solution is for, how they are going to use it, what impact it has on the business, and a variety of other parameters I makes it hard to choose the right solution as we are always balancing basic software principles that counter act like SOLID, K.I.S.S, and YAGNI, etc, the needs / requirements from business and general software properties likes robustness and stability.
 
-#### megacorp.json
-* Code should be unique
-* All prices are in USD
+Just saying, the code I would put into production for a prototype A/B test, an business critical system, and desperately needed internal efficiency tool would be vastly different. I do believe in constant improvement and growth both personally and software wise, so refactoring happens alot :P
 
-#### humphries.csv
-* All prices are in AUD
+Moving on to the solution:
 
-#### Exchange rate
-* The exchange rate is found in appsettings.json.
+## Assumptions -
 
-### Example Console Output Using Subset of Actual Data
-7f3c48c4-f8b6-453f-b2fa-83ec31dfa85c, Bobcat to Dig LM of Strip Footing, $800.00
+I decided to make alot more assumptions rather than ask questions since I am doing this over the weekend, have been given a timeboxed 2 hours, so didn't want to do some pre-planning -> ask questions -> cheat time since already all planned :P
 
-0a360e10-4e35-4e94-bd80-2e8bd6c749f1, Under Slab Sand 150mm, $77.24
+File formats are based upon file type not provider. If based upon provider as well the naming convention and way they are chosen should be updated.
 
-4000, 100 x 200 x 20mpa Internal Beam, $68.00
+Extra properties in files aren't currently needed. (and because theres no storage theres nothing i can do anyway)
 
-## Guidelines
-* Please limit your time to 2 hours. If you don't complete it within this time just let us know what is outstanding.
-* Commit your code at regular intervals so we can see how you reached your solution.
-* Once completed push to a public repo and share the link with us
-* The goal of this challenge is not to complete the exercise, but to give us an understanding on how you tackle problems. 
-* Be prepared to talk us through your thinking process & assumptions as you go.
-* Feel free to use any resources you would normally use (Google, StackOverflow etc.)
-* Please ask any questions you wish
+Files won't be too large, if files get into gigabyte or larger size, the application will probably explode.
+
+Since we a loading local files/printing to console it was hard to identify how they program would be used, thus things like exception handling, file parsing (& error handling invalid files), and logging haven't been handled yet.
+
+Figured exchange rate is more of a temporary store in config and would be exchanged out for a proper service asap but theres alot of unknowns
+
+## Things missing / still TODO
+
+a code review :P
+
+finalise tests - I haven't really covered much of the core functionality yet with tests however since we are using alot of IO (files/console), it is hard to put unit tests around those. I was potentially looking at refactoring out the file load logic from parsing logic so could test the parsing logic. This would led to problems on file size even more as couldn't do file stream for csv.
+
+based upon the above, probably a bit of refactoring since alot of the system uses primative IO stuff it makes it harder to test, but was also trying to balance simplicity / and not over engineer the solution. Cause honestly if its really a production ready solution that prints to console only, it probably doesn't deserve too much time invested. Getting that balance right without context is hard :(
+
+exception and error handling (like at all, currently just throws up).
+
+logging utilise ILogger to actually log into something

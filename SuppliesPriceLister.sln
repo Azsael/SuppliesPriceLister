@@ -10,6 +10,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5A1518CB-4F71-4327-B4F2-C00B1206D67E}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
+		spec.md = spec.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuppliesPriceLister.Common", "SuppliesPriceLister.Common\SuppliesPriceLister.Common.csproj", "{AFF0896D-8F13-410D-A967-C7681EAFC115}"
