@@ -1,0 +1,27 @@
+{
+  "partners": [
+    {
+      "name": "Megacorp",
+      "partnerType": "INTERNAL",
+      "partnerAddress": "Melbourne, VIC 3175",
+      "supplies": [
+        {
+          "id": 10,
+          "description": "Potato Twister",
+          "uom": "m2",
+          "priceInCents": 8000,
+          "providerId": "42",
+          "materialType": "Steel"
+        },
+        {
+          "id": 11,
+          "description": "Unicorn Voyager",
+          "uom": "Parsec",
+          "priceInCents": 9525,
+          "providerId": "6*7",
+          "materialType": "Glitter"
+        }
+      ]
+    }
+  ]
+}

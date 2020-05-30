@@ -26,7 +26,8 @@ namespace SuppliesPriceLister.Core.Loaders.Json
                     Unit = x.Uom,
                     Price = x.priceInCents / 100m,
                     MaterialType = x.MaterialType,
-                    Currency = list.Currency
+                    Currency = list.Currency,
+                    ProviderId = x.ProviderId
                 })
                 .ToList();
         }
