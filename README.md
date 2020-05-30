@@ -39,3 +39,7 @@ logging utilise ILogger to actually log into something
 dockerising the executable (i run windows home at my personal pc so couldn't do it)
 
 setup ci/cd - big fan of configuration for this sitting in repo
+
+convert format to an enum rather than magic string / constant values
+
+probably convert unit/uom to a enum or consider a library esp if we looking at usa market (ugh at feet/ounces)
