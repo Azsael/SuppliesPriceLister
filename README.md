@@ -26,7 +26,7 @@ Figured exchange rate is more of a temporary store in config and would be exchan
 
 ## Things missing / still TODO
 
-a code review :P
+a code review :P this honestly is a big one
 
 finalise tests - I haven't really covered much of the core functionality yet with tests however since we are using alot of IO (files/console), it is hard to put unit tests around those. I was potentially looking at refactoring out the file load logic from parsing logic so could test the parsing logic. This would led to problems on file size even more as couldn't do file stream for csv.
 
@@ -35,3 +35,7 @@ based upon the above, probably a bit of refactoring since alot of the system use
 exception and error handling (like at all, currently just throws up).
 
 logging utilise ILogger to actually log into something
+
+dockerising the executable (i run windows home at my personal pc so couldn't do it)
+
+setup ci/cd - big fan of configuration for this sitting in repo
