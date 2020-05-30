@@ -18,6 +18,8 @@ namespace SuppliesPriceLister
         static void Main(string[] args)
         {
             MainAsync(args).Wait();
+
+            Console.ReadLine(); // don't close console yet
         }
 
         static async Task MainAsync(string[] args)

@@ -37,7 +37,7 @@ namespace SuppliesPriceLister.Core
             {
                 return loader.LoadSupplyList(supplyList);
             }
-            throw new NotImplementedException();
+            throw new ArgumentOutOfRangeException(nameof(supplyList), "Invalid Supply List");
         }
     }
 }

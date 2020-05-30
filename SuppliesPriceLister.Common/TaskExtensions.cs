@@ -11,6 +11,5 @@ namespace SuppliesPriceLister.Common
         {
             return Task.WhenAll(tasks.ToList());
         }
-
     }
 }
